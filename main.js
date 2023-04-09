@@ -15,20 +15,49 @@ const getComputerChoice = () => {
   let randomNumber = Math.floor(Math.random() * 3);
   switch (randomNumber) {
     case 0:
-      return "Rock";
-      break;
+      return "rock";
     case 1:
-      return "Paper";
-      break;
+      return "paper";
     case 2:
-      return "Scissors";
-      break;
+      return "scissors";
   }
 };
 
-const determineWinner = (computerChoice, userChoice) => {
-    if (computerChoice === userChoice) {
-        return "It's a tie!";
-    };
-    
+let computerChoice = getComputerChoice();
+
+const playRound = (computerChoice, playerChoice) => {
+  if (computerChoice === playerChoice) {
+    return "It's a tie!";
+  }
+  if (playerChoice === "rock") {
+    if (computerChoice === "paper") {
+      return "You lost!";
+    } else {
+      return "You won!";
+    }
+  }
+  if (playerChoice === "paper") {
+    if (computerChoice === "scissors") {
+      return "You lost!";
+    } else {
+      return "You won!";
+    }
+  }
+  if (playerChoice === "scissors") {
+    if (computerChoice === "rock") {
+      return "You lost!";
+    } else {
+      return "You won!";
+    }
+  }
 };
+
+const game = () => {
+  console.log(playRound(computerChoice, "paper"));
+  console.log(playRound(computerChoice, "rock"));
+  console.log(playRound(computerChoice, "scissors"));
+  console.log(playRound(computerChoice, "paper"));
+  console.log(playRound(computerChoice, "paper"));
+}
+
+game();
