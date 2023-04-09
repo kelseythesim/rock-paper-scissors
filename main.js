@@ -12,16 +12,23 @@ const getPlayerChoice = (userInput) => {
 };
 
 const getComputerChoice = () => {
-    let randomNumber = Math.floor(Math.random() * 3)
-    switch (randomNumber) {
-        case 0:
-            return "Rock";
-            break;
-        case 1: return "Paper";
-            break;
-        case 2: return "Scissors";
-            break;
-    }
-}
+  let randomNumber = Math.floor(Math.random() * 3);
+  switch (randomNumber) {
+    case 0:
+      return "Rock";
+      break;
+    case 1:
+      return "Paper";
+      break;
+    case 2:
+      return "Scissors";
+      break;
+  }
+};
 
-
+const determineWinner = (computerChoice, userChoice) => {
+    if (computerChoice === userChoice) {
+        return "It's a tie!";
+    };
+    
+};
